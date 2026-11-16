@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Кошик інтернет-магазину</title>
+    <style>
+        table, th, td { border: 1px solid #999; border-collapse: collapse; padding: 4px 8px; }
+        #error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Перегляд кошика інтернет-магазину</h1>
+
+    <p>
+        <label for="cartId">ID кошика:</label>
+        <input type="number" id="cartId" value="1" min="1">
+        <button id="loadBtn">Завантажити кошик</button>
+    </p>
+    <p>
+        <label for="mode">Режим:</label>
+        <select id="mode">
+            <option value="normal">Звичайний запит (delay=3000)</option>
+            <option value="failFirst">Тест: перша спроба невдала, друга реальна</option>
+            <option value="http404">Тест: HTTP 404 Not Found</option>
+            <option value="http503">Тест: HTTP 503 Service Unavailable</option>
+            <option value="timeout">Тест: таймаут (delay=5000, ліміт 4 с)</option>
+        </select>
+    </p>
+
+    <div id="status">Дані кошика ще не завантажені. Введіть ID кошика та натисніть «Завантажити кошик».</div>
+    <ul id="log"></ul>
+    <div id="error"></div>
+    <div id="cart"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
